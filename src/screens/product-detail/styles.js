@@ -26,6 +26,8 @@ export const styles = StyleSheet.create({
         fontSize:20,
         marginVertical:5,
         fontFamily:'Urbanist-Regular',
+        paddingHorizontal: 5,
+        textAlign:'center',
     },
     weight:  {
         fontSize:20,

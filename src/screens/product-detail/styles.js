@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         marginVertical:30,
     },
-    productDeail:  {
+    productDetail:  {
         height:250,
         alignItems: "center",
         justifyContent:"space-around"

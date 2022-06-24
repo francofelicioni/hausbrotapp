@@ -1,17 +1,21 @@
 import React from 'react'
 import { View } from 'react-native'
 import { Categories } from '../../components/index'
-import { categories } from '../../constants/data/categories'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectCategory } from '../../store/actions/index' // Es una accion
 import { styles } from './styles'
 
 const CategoriesScreen = ({ navigation, route }) => {
-
+    const dispatch = useDispatch()
+    const categories = useSelector(state => state.category.categories)
+    const categoryProducts = useSelector(state => state.products.filteredProducts)
     const onHandlerSelectedCategory = (item) => {
+        dispatch(selectCategory(item.id))
         navigation.navigate('Products', {
-            categoryId: item.id,
             name: item.title
         })
     }
+
     return (
         <View style={styles.container}>
             <Categories 
